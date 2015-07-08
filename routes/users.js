@@ -20,7 +20,7 @@ router.post('/create', function(req, res, next) {
       var vm = {
         title: 'Create an account',
         input: req.body,
-        error: 'Something went wrong'
+        error: err.errors
       };
       delete vm.input.password;
       return res.render('users/create', vm);
